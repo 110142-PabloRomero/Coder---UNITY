@@ -368,6 +368,7 @@
 "Assets/Scripts/BeetleController.cs"
 "Assets/Scripts/BeetleFlyController.cs"
 "Assets/Scripts/CharacterController.cs"
+"Assets/Scripts/EvilBugController.cs"
 "Assets/Scripts/Timer.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0

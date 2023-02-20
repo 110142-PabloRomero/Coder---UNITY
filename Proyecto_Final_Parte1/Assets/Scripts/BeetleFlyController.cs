@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BeetleFlyController : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform characterPosition;
     private float speed = 10f;
     private float speedRotation = 1f;
     [SerializeField] GameObject atack;
@@ -31,7 +31,7 @@ public class BeetleFlyController : MonoBehaviour
 
     public void ExecFollow()
     {
-        Vector3 follow = player.position - transform.position;
+        Vector3 follow = characterPosition.position - transform.position;
         var distance = follow.magnitude;
 
         if (distance > 12 && distance < 35)
@@ -45,12 +45,12 @@ public class BeetleFlyController : MonoBehaviour
 
     public void ExecLook()
     {
-        Vector3 follow = player.position - transform.position;
+        Vector3 follow = characterPosition.position - transform.position;
         var distance = follow.magnitude;
 
         if (distance  < 35)
         {
-            var bugRotation = player.position - transform.position;
+            var bugRotation = characterPosition.position - transform.position;
             var newRotation = Quaternion.LookRotation(bugRotation);
             transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedRotation * Time.deltaTime);
         }
@@ -67,7 +67,7 @@ public class BeetleFlyController : MonoBehaviour
     public void TimerAtack()
     {
         countDown -= Time.deltaTime;
-        Vector3 follow = player.position - transform.position;
+        Vector3 follow = characterPosition.position - transform.position;
         var distance = follow.magnitude;
 
         if (countDown <= 0)

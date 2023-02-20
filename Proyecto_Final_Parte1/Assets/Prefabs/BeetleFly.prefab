@@ -258,7 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a48390bf35eec243a42e0ca5bfb3373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5079155024403833812, guid: 8fb046e78fdafac45870570ad4253115, type: 3}
+  characterPosition: {fileID: 5079155024403833812, guid: 8fb046e78fdafac45870570ad4253115,
+    type: 3}
   atack: {fileID: 1308010828311300341, guid: d762e771947ad4644bcc1dbae5a684bd, type: 3}
   shootPoint: {fileID: 1953786375}
   intervalAtack: 2

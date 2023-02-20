@@ -127,4 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e843917a309fd42409c1d383777f8021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bug: {fileID: 5079155024403833812, guid: 8fb046e78fdafac45870570ad4253115, type: 3}
+  characterPosition: {fileID: 5079155024403833812, guid: 8fb046e78fdafac45870570ad4253115,
+    type: 3}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
