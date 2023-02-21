@@ -13,7 +13,7 @@ public class EvilBugController : MonoBehaviour
 
     private void Awake()
     {
-        currentWaypoint = UnityEngine.Random.Range(0, list_waypoints.Count);
+        currentWaypoint = Random.Range(0, list_waypoints.Count);
         transform.LookAt(list_waypoints[currentWaypoint].position);
     }
 
@@ -73,6 +73,7 @@ public class EvilBugController : MonoBehaviour
 
     private void PatrolBeetle()
     {
+
         transform.LookAt(list_waypoints[currentWaypoint].position);
         var currntWaypoint = list_waypoints[currentWaypoint];
         var currntDifference = (currntWaypoint.position - transform.position);
@@ -83,17 +84,23 @@ public class EvilBugController : MonoBehaviour
         {
             NextWaypoint();
         }
-
-
     }
 
     private void NextWaypoint()
     {
-        currentWaypoint++;
+        int valueWayPoint;
 
-        if (currentWaypoint >= list_waypoints.Count)
+        valueWayPoint = currentWaypoint;
+
+        valueWayPoint--;
+
+        if (valueWayPoint < 0)
         {
-            currentWaypoint = 0;
+            currentWaypoint = list_waypoints.Count -1;
+        }
+        else
+        {
+            currentWaypoint = valueWayPoint;
         }
         transform.LookAt(list_waypoints[currentWaypoint].position);
 

@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class BeetleController : MonoBehaviour
 {
     [SerializeField] private Transform characterPosition;
-    [SerializeField] private Transform[] waypoints;
+    [SerializeField] private Transform[] wayPoints;
 
     private float speed = 7f;
     private float speedRotation = 1f;
@@ -16,8 +16,8 @@ public class BeetleController : MonoBehaviour
 
     private void Awake()
     {
-        currentWaypoint = UnityEngine.Random.Range(0, waypoints.Length);
-        transform.LookAt(waypoints[currentWaypoint].position);
+        currentWaypoint = UnityEngine.Random.Range(0, wayPoints.Length);
+        transform.LookAt(wayPoints[currentWaypoint].position);
     }
 
     void Start()
@@ -26,7 +26,7 @@ public class BeetleController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         ExecFollow();
@@ -77,8 +77,8 @@ public class BeetleController : MonoBehaviour
 
     private void PatrolBeetle()
     {
-        transform.LookAt(waypoints[currentWaypoint].position);
-        var currntWaypoint=  waypoints[currentWaypoint];
+        transform.LookAt(wayPoints[currentWaypoint].position);
+        var currntWaypoint= wayPoints[currentWaypoint];
         var currntDifference = (currntWaypoint.position - transform.position);
         var direction = currntDifference.normalized;
         Move(direction);
@@ -95,11 +95,11 @@ public class BeetleController : MonoBehaviour
     {
         currentWaypoint++;
         
-        if (currentWaypoint >= waypoints.Length)
+        if (currentWaypoint >= wayPoints.Length)
         {
             currentWaypoint = 0;
         }
-        transform.LookAt(waypoints[currentWaypoint].position);
+        transform.LookAt(wayPoints[currentWaypoint].position);
 
     }
 

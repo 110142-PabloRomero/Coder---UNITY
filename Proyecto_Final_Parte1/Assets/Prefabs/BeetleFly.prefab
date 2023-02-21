@@ -262,7 +262,9 @@ MonoBehaviour:
     type: 3}
   atack: {fileID: 1308010828311300341, guid: d762e771947ad4644bcc1dbae5a684bd, type: 3}
   shootPoint: {fileID: 1953786375}
-  intervalAtack: 2
+  intervalAtack: 3
+  t1: {fileID: 0}
+  t2: {fileID: 0}
 --- !u!1 &1111351587458776427
 GameObject:
   m_ObjectHideFlags: 0

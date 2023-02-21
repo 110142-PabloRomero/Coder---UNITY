@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class BeetleFlyController : MonoBehaviour
 {
+
+    private enum w_points{
+        w_point1, w_point2
+    }
+
     [SerializeField] private Transform characterPosition;
     private float speed = 10f;
     private float speedRotation = 1f;
@@ -13,21 +18,45 @@ public class BeetleFlyController : MonoBehaviour
     [SerializeField] private float intervalAtack;
     private float countDown;
 
+    [SerializeField] private Transform t1, t2;
+    [SerializeField] private w_points CurrentWayPoints;
+
+    [SerializeField] private Dictionary<w_points, Transform> wpDiccionary =
+        new Dictionary<w_points, Transform>();
+
+    private Transform InitialWayPoint;
+
+    private void populateDiccionary()
+    {
+        wpDiccionary.Add(w_points.w_point1, t1);
+        wpDiccionary.Add(w_points.w_point2, t2);
+    }
+
+    void Awake()
+    {
+        populateDiccionary();
+
+        if (wpDiccionary.TryGetValue(CurrentWayPoints, out var firtsWayPoint))
+        {
+            InitialWayPoint = firtsWayPoint;
+        }
+
+
+    }
 
     void Start()
     {
         ResetTime();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         ExecFollow();
         ExecLook();
         TimerAtack();
-
-
     }
+
 
     public void ExecFollow()
     {
@@ -38,9 +67,10 @@ public class BeetleFlyController : MonoBehaviour
         {
             transform.position += follow.normalized * (speed * Time.deltaTime);
         }
-
-       
-
+        else
+        {
+            Move();
+        }
     }
 
     public void ExecLook()
@@ -53,6 +83,10 @@ public class BeetleFlyController : MonoBehaviour
             var bugRotation = characterPosition.position - transform.position;
             var newRotation = Quaternion.LookRotation(bugRotation);
             transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedRotation * Time.deltaTime);
+        }
+        else
+        {
+            Move();
         }
     }
 
@@ -92,9 +126,22 @@ public class BeetleFlyController : MonoBehaviour
 
 
 
+    private void Move()
+    {
+
+        transform.LookAt(InitialWayPoint.position);
+        var currntDifference = InitialWayPoint.position - transform.position;
+        var direction = currntDifference.normalized;
+        float currntDistance = currntDifference.magnitude;
+        if (currntDistance >= 2f)
+        {
+
+            transform.position += (speed * direction * Time.deltaTime);
+        }
+    }
 
 
-
+    
 
 
 }

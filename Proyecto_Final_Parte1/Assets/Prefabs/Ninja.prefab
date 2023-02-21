@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1487796038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487796039}
+  m_Layer: 0
+  m_Name: followPointFly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1487796039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487796038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5079155024403833812}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155747923306883447
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +792,7 @@ Transform:
   - {fileID: 733130547327746880}
   - {fileID: 1076585090445951279}
   - {fileID: 1345924262851096466}
+  - {fileID: 1487796039}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1416,6 +1448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8598805858634451202}
   - component: {fileID: 8598805858634451203}
+  - component: {fileID: 1544983463}
   m_Layer: 0
   m_Name: CameraNinja
   m_TagString: Untagged
@@ -1430,7 +1463,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8598805858634451201}
-  m_LocalRotation: {x: 0.098928295, y: -0.0062449444, z: 0.0006208597, w: 0.9950748}
+  m_LocalRotation: {x: 0.098928295, y: -0.0062449533, z: 0.0006208605, w: 0.9950748}
   m_LocalPosition: {x: 0.0036054882, y: 0.05768816, z: -0.2872392}
   m_LocalScale: {x: 0.02245079, y: 0.022450786, z: 0.022450786}
   m_ConstrainProportionsScale: 0
@@ -1477,6 +1510,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8598805859744679532}
+--- !u!114 &1544983463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598805858634451201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed45e669d262e64c9f976c1707a0e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 30
+  timerText: {fileID: 0}
+  go: {fileID: 0}
 --- !u!1 &8598805859744679443
 GameObject:
   m_ObjectHideFlags: 0

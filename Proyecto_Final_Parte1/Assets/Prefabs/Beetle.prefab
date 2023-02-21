@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPosition: {fileID: 5079155024403833812, guid: 8fb046e78fdafac45870570ad4253115,
     type: 3}
-  waypoints:
+  wayPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
